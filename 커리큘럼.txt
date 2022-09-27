@@ -1,0 +1,21 @@
+java 2~3주
+
+html / js / css / bootstrap   --> front
+AJax / jQuery (비동기) 
+ES6 / React 
+
+DB - Oracle / MySQL / PostgreSQL  --> back 
+     - MyBatis / JPA 
+
+Spring                                              --> sever 
+Spring Boot 
+
+Git
+
+Project
+
+
+
+반디집
+Edit Plus
+Chrome
