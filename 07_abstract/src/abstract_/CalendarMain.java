@@ -1,9 +1,50 @@
 package abstract_;
 
+import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.util.Calendar;
+import java.util.Scanner;
+class Cal{
+	int year;
+	int month;
+	int weekday;
+	int lastday;
+	Scanner sc = new Scanner(System.in);
+	Cal(){
+	System.out.print("년도 입력 : ");
+	year = sc.nextInt();
+	System.out.print("월 입력 : ");
+	month = sc.nextInt();
+	}
+	void calc(){
+	Calendar cal = Calendar.getInstance();
+	
+    cal.set(Calendar.YEAR,year);
+    cal.set(Calendar.MONTH, month-1);
+    cal.set(Calendar.DAY_OF_MONTH,1);    
+    weekday = cal.get(Calendar.DAY_OF_WEEK);//입력한 년,달의 첫요일
+    lastday = cal.getActualMaximum(Calendar.DAY_OF_MONTH);//입력한 년,달의 마지막날
+	}
+	void display() {
+		System.out.println("일\t월\t화\t수\t목\t금\t토");
+		for(int i=1; i<weekday; i++) {
+			System.out.print("\t");
+		}
+		for(int i=1; i<=lastday; i++) {
+			System.out.print(i+"\t");
+			
+			if((i+weekday-1)%7==0) {
+				System.out.println();
+			}
+		}
+	}
+}
 public class CalendarMain {
-
+	
 	public static void main(String[] args) {
-		
+		Cal c = new Cal();
+		c.calc();
+		c.display();
 	}
 
 }
