@@ -3,17 +3,17 @@ package class2;
 	String pum;	
 	int jan,feb,mar,tot;
 	static int sumJan,sumFeb,sumMar;
-	static {
-		sumJan = 0;
-		sumFeb = 0;
-		sumMar = 0;
-	}
-	Fruit(String a , int b , int c , int d){
-		pum = a;
-		jan = b;
-		feb = c;
-		mar = d;
-	}
+		static {
+			sumJan = 0;
+			sumFeb = 0;
+			sumMar = 0;
+		}
+		Fruit(String pum , int jan , int feb , int mar){
+			this.pum = pum;
+			this.jan = jan;
+			this.feb = feb;
+			this.mar = mar;
+		}
 		void calcTot(){
 			sumJan += jan;
 			sumFeb += feb;
@@ -32,19 +32,17 @@ package class2;
 public class FruitMain {
 	
 	public static void main(String[] args) {
-		Fruit apple = new Fruit("사과", 100, 80, 75);
-		Fruit grape = new Fruit("포도", 30, 25, 10);
-		Fruit strawberry = new Fruit("딸기", 25, 30, 90);
-		apple.calcTot();
-		grape.calcTot();
-		strawberry.calcTot();
-		System.out.println("---------------------------------\r\n"
+		Fruit ar[] = {new Fruit("사과", 100, 80, 75),
+						new Fruit("포도", 30, 25, 10),
+						new Fruit("딸기", 25, 30, 90)};
+		System.out.println("-----------------------------------\r\n"
 				+ "PUM\tJAN\tFEB\tMAR\tTOT\r\n"
-				+ "---------------------------------");
-		apple.display();
-		grape.display();
-		strawberry.display();
-		System.out.println("---------------------------------");
+				+ "-----------------------------------");
+		for(int i=0; i<ar.length; i++) {
+			ar[i].calcTot();
+			ar[i].display();
+		}
+		System.out.println("-----------------------------------");
 		Fruit.output();
 	}
 
