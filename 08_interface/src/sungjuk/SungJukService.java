@@ -39,7 +39,7 @@ public class SungJukService{
 				sungJuk = new SungJukSort();
 			}
 			else if(num == 6) {
-				break;
+				break; //System.exit(0);강제종료
 			}
 			else {
 				System.out.println("잘못입력하셧습니다 1~5까지의 숫자를 입력하시오");

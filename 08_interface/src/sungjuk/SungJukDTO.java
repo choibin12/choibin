@@ -72,9 +72,7 @@ public class SungJukDTO implements Comparable<SungJukDTO> {
 	}
 	@Override
 	public int compareTo(SungJukDTO o) {
-		if(this.tot<o.tot) return -1;
-		else if(this.tot > o.tot) return 1;
-		else return 0;
+		return this.tot<o.tot ? 1:-1 ;//내림차순
 		
 	}
 }
