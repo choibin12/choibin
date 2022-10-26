@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>111</title>
+<script type="text/javascript">
+	function check() {
+//		if (document.paranForm.name.value=="") {
+//			alert("이름을 입력하세요");
+//		}else if (document.paranForm.age.value=="") {
+//			alert("나이를 입력하세요");
+//		}
+/* 		if (document.getElementById("name").value=="") {
+			alert("이름을 입력하세요");
+		}else if (document.getElementById("age").value=="") {
+			alert("나이를 입력하세요");
+		} */
+		document.getElementById("nameDiv").InnerText="";
+		document.getElementById("ageDiv").InnerText="";
+		if(document.getElementById("name").value=="")
+			document.getElementById("nameDiv").innerText = "이름을 입력하세요";
+		
+		else if(document.getElementById("age").value=="")
+			document.getElementById("ageDiv").innerText = "나이을 입력하세요";
+		
+		else
+			document.paramForm.submit();
+		
+	}
+</script>
+<style type="text/css">
+div{ 
+	color: red;
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+<form method="" action="http://localHost:8080/testServlet/ParamServlet" name="paramForm" >
+	<table border="1" cellpadding="5" cellspacing="0" >
+		<tr>
+			<td align="center" width="100">이름</td>
+			<td width="300">
+			<input type="text" name="name" id="name"/>
+			<div id="nameDiv"></div>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" width="100">나이</td>
+			<td width="300">
+			<input type="text" name="age" id="age"size="5"/>
+			<div id ="ageDiv"></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+			<input type="button" value="보내기" onclick="javascript:check()"></input>
+			<input type="reset" value="취소" id="reset"></input>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

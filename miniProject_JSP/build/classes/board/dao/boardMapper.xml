@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="boardSQL">
+  <insert id="write" parameterType="map">
+     insert into board(seq,id,name,email,subject,content,ref)
+      values(seq_board.nextval,#{id},#{name},#{email},#{subject},#{content},seq_board.nextval)
+  </insert>
+  
+  <select id="list" parameterType="map" resultType="board">
+	select * from(select rownum rn, tt. * from(select seq,id,name,email,subject,content,to_char(logtime,'YYYY"년"MM"월"DD"일"') as logtime,
+				 	hit from board order by seq desc) tt)
+					 where rn between #{startNum} and #{endNum}
+					 		<!-- rn>= ? and rn &lt;=? -->
+					 		<!-- rn>= ? and rn <![CDATA[<]]>=? -->
+  </select>
+  <select id="gettotala"  resultType="int">
+  	select count(*)from board
+  </select>
+  <select id="listselect" parameterType="map" resultType="board">
+	select subject,content,hit from board
+	where seq=#{seq}
+  </select>
+  <update id="hitupdate" parameterType="map">
+  	update board set hit = #{hit} where seq = #{seq}
+  </update>
+</mapper>
+
+<!-- #{}같은이름의 컬럼을 찾아간다 -->

@@ -1,0 +1,17 @@
+Eclipse 설치
+Oracle 설치
+-압축풀기 
+-setup
+
+
+C:\app\fhkdl\product\21c 설치위치 oracle
+C:\Program Files\Java\jdk-11.0.16 java위치
+
+Oracle 편집기 cmd, sqldeveloper
+system , 758645
+hr , hr
+c##java , bit
+
+db sample schema 파일 압축풀어서 
+human resource 복사후
+21c\dbhomeXE\demo\schema 에 붙여넣기

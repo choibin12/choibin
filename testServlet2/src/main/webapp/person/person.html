@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>숙제2</title>
+<style type="text/css">
+#item{
+	width:100px;
+}
+</style>
+<script type="text/javascript">
+ function check() {
+	 document.getElementById("nameDiv").InnerText="";
+	 if(document.getElementById("name").value==""){
+			document.getElementById("nameDiv").innerText = "이름을 입력하세요";
+	 }else{
+			document.personForm.submit();
+	 }
+	
+}
+</script>
+</head>
+<body>
+<form method="" action="http://localHost:8080/testServlet2/PersonServlet" name="personForm" >
+	<table border="1" cellpadding="5" cellspacing="0" >
+		<tr>
+			<td align="center"  id="item">이름</td>
+			<td>
+			<input type="text" name="name" id="name" placeholder="이름 입력" />
+			<div id="nameDiv"></div>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">성별</td>
+			<td>
+			<input type="radio" name="gender" id="gender" value="0" checked="checked"/>
+			<label for="gender_m">남자</label>
+			<input type="radio" name="gender" id="gender" value="1" />
+			<label for="gender_f">여자</label>
+			</td>
+		</tr>
+		<tr>
+			<td align="center"  id="item">색깔</td>
+			<td id="input">
+				<select name="color" id="color" style="width: 100px;">
+					<optgroup label="색깔">
+					<option value="red">빨강</option>
+					<option value="green">초록</option>
+					<option value="blue">파랑</option>
+					<option value="magenta">보라</option>
+					<option value="cyan">하늘</option>
+					</optgroup>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="center"  id="item">취미</td>
+			<td >
+			<input type="checkbox" name="hobby" id="hobby1" value="독서"/>
+			<label for="hobby">독서</label>
+			<input type="checkbox" name="hobby" id="hobby2" value="영화"/>
+			<label for="hobby">영화</label>
+			<input type="checkbox" name="hobby" id="hobby3" value="음악"/>
+			<label for="hobby">음악</label>	
+			<input type="checkbox" name="hobby" id="hobby4" value="게임"/>
+			<label for="hobby">게임</label>	
+			<input type="checkbox" name="hobby" id="hobby5" value="쇼핑"/>
+			<label for="hobby">쇼핑</label>	
+			</td>
+		</tr>
+		<tr>
+			<td align="center"  id="item">과목</td>
+			<td>
+				<select name="subject" id="subject" multiple size="5">
+					<option value="JAVA">JAVA</option>
+					<option value="Servlet">Servlet</option>
+					<option value="JSP">JSP</option>
+					<option value="SPRING">SPRING</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+			 <input type="button" value="SEND" onclick="check()"></input> 
+			<!-- <button onclick="check()" >SEND</button> -->
+			<input type="reset" value="CANCEL"></input>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
+<!-- name,gender,color,hobby,subject,button-submit,button-cancel
+	이름만 유효성검사 , ul태그 사용 취미,과목 복수선택가능
+	 -->

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>숙제</title>
+<style type="text/css">
+#item{
+ width: 100px;
+}
+</style>
+</head>
+<body>
+<h2>회원가입</h2>
+<form action="">
+		<table  border = "1" width="450" align="center" cellpadding="1" cellspacing="1">
+			<tbody>
+				<tr>
+					<td align="center" id="item">이름</td>
+					<td><input type="name" name="name" id="user_name"
+						maxlength="5" placeholder="이름 입력" /></td>
+				</tr>
+				<tr>
+					<td align="center" id="item">아이디</td>
+					<td><input type="id" name="id" id="user_id"
+						maxlength="20" placeholder="아이디 입력" /></td>
+					
+				</tr>
+				<tr>
+					<td align="center" id="item">비밀번호</td>
+					<td><input type="password" name="pwd" id="user_pwd"
+						maxlength="20"/></td>
+				</tr>
+					<td align="center" id="item">재확인</td>
+					<td><input type="password" name="repwd" id="user_id"
+						maxlength="20"  /></td>
+				</tr>
+				<tr>
+					<td align="center" id="item">성별</td>
+					<td><input type="radio" name="gender" id="gender_m" value="1"/>
+					<label for="gender_m">남자</label>
+					<input type="radio" name="gender" id="gender_f" value="2" />
+					<label for="gender_f">여자</label></td>
+				</tr>
+				<tr>
+					<td align="center" id="item">이메일</td>
+					<td><input type="text" name="email" id="user_email"
+						maxlength="20"/>@<input type="text">
+						<select type="email2" name="email2" id="user_email2" maxlength="20">
+							<option type="text">직접입력</option>
+							<option value="gmail">gmail.com</option>
+							<option value="naver">naver.com</option>
+							<option value="daum">daum.net</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td align="center"id="item" >핸드폰</td>
+					<td><select type="tel1" name="tel1" id="tel1" style="width: 60px">
+							<option value="010">010</option>
+							<option value="011">011</option>
+							<option value="019">019</option>
+						</select>-<input type="tel2" name="tel2" id="tel2"
+						maxlength="4" style="width: 60px"/>-<input type="tel3" name="tel3" id="tel3"
+						maxlength="4" style="width: 60px"/>
+						</td>
+				</tr>
+				<tr>
+					<td align="center" id="item" >주소</td>
+					<td><input type="text" name="zipcode" id="user_zipcode"
+						maxlength="20" disabled /><button>우편번호검색</button>
+						<input type="text" name="add1" id="user_add1"
+						maxlength="20" disabled  placeholder="주소 입력" style="width: 300px" />
+						<input type="text" name="add2" id="user_add2"
+						maxlength="20"  placeholder="상세 주소 입력" style="width: 300px" /></td>
+						
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+					<button type="submit">회원가입</button>
+					<button type="reset" id="reset" >다시작성</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+					<button type="button" id="aa" >click </button>
+					<script>
+					document.getElementById('aa').onclick = function () {
+						alert("버튼 클릭!!")
+					}
+					document.getElementById('reset').onclick = function reset() {
+						alert("다시 작성 하시오")
+					}
+					</script>
+</body>
+</html>
